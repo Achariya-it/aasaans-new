@@ -5,10 +5,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "NODE_ENV=development tsx server/index.ts",
-    "scripts": {
-  "start": "node build/server/index.js",
-  "build": "vite build && esbuild server/index.ts --platform=node --outdir=build/server"
-}
+    "start": "node build/server/index.js",
+    "build": "vite build && esbuild server/index.ts --platform=node --outdir=build/server",
     "check": "tsc",
     "db:push": "drizzle-kit push"
   },
@@ -114,3 +112,4 @@
     "bufferutil": "^4.0.8"
   }
 }
+
