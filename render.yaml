@@ -2,9 +2,11 @@ services:
   - type: web
     name: skillhirelms-web
     env: node
-    region: oregon
     plan: free
-    buildCommand: npm run build
+    region: oregon
+    buildCommand: |
+      cd client && npm install && npm run build
+      cd .. && npm install
     startCommand: npm run start
     envVars:
       - key: DATABASE_URL
