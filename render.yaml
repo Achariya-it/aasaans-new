@@ -2,18 +2,19 @@ services:
   - type: web
     name: skillhirelms-web
     env: node
-    plan: free
     region: oregon
-    buildCommand: |
-      cd client && npm install && npm run build
-      cd .. && npm install
+    plan: free
+
+    buildCommand: npm install && npm run build
     startCommand: npm run start
+
     envVars:
+      - key: NODE_ENV
+        value: production
       - key: DATABASE_URL
         sync: false
       - key: SESSION_SECRET
         sync: false
-      - key: NODE_ENV
-        value: production
+
     autoDeploy: true
     branch: main
